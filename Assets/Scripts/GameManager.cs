@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public string sceneName;
+    [SerializeField] AudioSource audioCoin;
     [SerializeField] TextMeshProUGUI totalCoins;
     [SerializeField] TextMeshProUGUI coinsCollected;
     [SerializeField] TextMeshProUGUI timeLifeText;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        audioCoin = GetComponent<AudioSource>();
         coins = GameObject.FindGameObjectsWithTag("Coin").Length;
         totalCoins.text = coins.ToString();
     }
@@ -28,11 +30,13 @@ public class GameManager : MonoBehaviour
 
         if (timeLife <= 0)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene("GameOver");
         }
 
         if (points == coins)
-        {
+        {    
             SceneManager.LoadScene(sceneName);
         }
 
@@ -42,6 +46,7 @@ public class GameManager : MonoBehaviour
     {
         points++;
         coinsCollected.text = points.ToString();
+        audioCoin.Play();
     }
 
 }

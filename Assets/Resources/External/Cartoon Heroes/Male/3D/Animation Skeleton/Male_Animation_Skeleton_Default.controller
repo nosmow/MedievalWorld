@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!206 &-4980587665722729734
+--- !u!206 &-2950616886531730358
 BlendTree:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,7 +14,7 @@ BlendTree:
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Run Blend
+    m_DirectBlendParameter: VelX
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ffa4b3d55dcf24f429f26f4f7a1d18ab, type: 2}
@@ -22,7 +22,7 @@ BlendTree:
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Run Blend
+    m_DirectBlendParameter: VelX
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ffa4b3d55dcf24f429f26f4f7a1d18ab, type: 2}
@@ -30,7 +30,7 @@ BlendTree:
     m_Position: {x: 0, y: -1}
     m_TimeScale: -1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Run Blend
+    m_DirectBlendParameter: VelX
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ffa4b3d55dcf24f429f26f4f7a1d18ab, type: 2}
@@ -38,7 +38,7 @@ BlendTree:
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Run Blend
+    m_DirectBlendParameter: VelX
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: ffa4b3d55dcf24f429f26f4f7a1d18ab, type: 2}
@@ -46,41 +46,15 @@ BlendTree:
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
-    m_DirectBlendParameter: Run Blend
+    m_DirectBlendParameter: VelX
     m_Mirror: 0
   m_BlendParameter: VelX
-  m_BlendParameterY: VelZ
+  m_BlendParameterY: VelY
   m_MinThreshold: 0
   m_MaxThreshold: 1
   m_UseAutomaticThresholds: 1
   m_NormalizedBlendValues: 0
-  m_BlendType: 2
---- !u!1102 &-1776241798173954126
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Blend Tree
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: -4980587665722729734}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_BlendType: 1
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -90,19 +64,13 @@ AnimatorController:
   m_Name: Male_Animation_Skeleton_Default
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Run Blend
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
-  - m_Name: VelZ
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: VelX
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: VelY
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -777,7 +745,7 @@ AnimatorStateMachine:
     m_Position: {x: 1008, y: 72, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102414701294786830}
-    m_Position: {x: 360, y: 30, z: 0}
+    m_Position: {x: 360, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102723739437390148}
     m_Position: {x: 1224, y: 72, z: 0}
@@ -819,16 +787,16 @@ AnimatorStateMachine:
     m_Position: {x: 576, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102332064981782274}
-    m_Position: {x: 360, y: 270, z: 0}
+    m_Position: {x: 360, y: 228, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102836371342211284}
     m_Position: {x: 576, y: 228, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102662826810688700}
-    m_Position: {x: 580, y: 20, z: 0}
+    m_Position: {x: 576, y: 24, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1776241798173954126}
-    m_Position: {x: 350, y: 160, z: 0}
+    m_State: {fileID: 5891662790470589843}
+    m_Position: {x: 350, y: 150, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -838,4 +806,30 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 408, y: -96, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -1776241798173954126}
+  m_DefaultState: {fileID: 5891662790470589843}
+--- !u!1102 &5891662790470589843
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blend Tree
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -2950616886531730358}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 

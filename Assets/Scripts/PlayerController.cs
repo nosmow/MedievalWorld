@@ -12,37 +12,21 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //playerController = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         movX = Input.GetAxis("Horizontal");
         movZ = Input.GetAxis("Vertical");
-
-        transform.Rotate(0, movX * Time.deltaTime * degreeMultiplier, 0);
-        transform.Translate(0, 0, movZ * Time.deltaTime * speed);
-
-        animator.SetFloat("VelX", movX);
-        animator.SetFloat("VelZ", movZ);
-
-        /*AnimLogic();
-
-        movX = Input.GetAxis("Horizontal");
-        movZ = Input.GetAxis("Vertical");
-
-        move = transform.right * movX + transform.forward * movZ;
 
         if (movX != 0 || movZ != 0)
         {
-            transform.Rotate(0, movX * degreeMultiplier, 0);
-            playerController.Move(move * speed * Time.deltaTime);
-        }*/
-    }
+            transform.Rotate(0, movX * Time.deltaTime * degreeMultiplier, 0);
+            transform.Translate(0, 0, movZ * Time.deltaTime * speed);
 
-    void AnimLogic()
-    {
-       // animator.SetFloat("X", new mov.)
+            animator.SetFloat("VelX", movX);
+            animator.SetFloat("VelY", movZ);
+        }
     }
 }
