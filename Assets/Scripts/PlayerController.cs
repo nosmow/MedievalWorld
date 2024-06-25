@@ -5,14 +5,25 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
-    public float degreeMultiplier = 200f;
     [SerializeField] Animator animator;
-    float movX, movZ;
+    float movX, movZ, camX;
+    public float mouseSensitivity = 100f;
     Vector3 move;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update()
+    {
+        camX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        if (camX != 0)
+        {
+            transform.Rotate(Vector3.up * camX);
+        }
     }
 
     private void FixedUpdate()
@@ -20,10 +31,10 @@ public class PlayerController : MonoBehaviour
         movX = Input.GetAxis("Horizontal");
         movZ = Input.GetAxis("Vertical");
 
+
         if (movX != 0 || movZ != 0)
         {
-            transform.Rotate(0, movX * Time.deltaTime * degreeMultiplier, 0);
-            transform.Translate(0, 0, movZ * Time.deltaTime * speed);
+            transform.Translate(movX * Time.deltaTime * speed, 0, movZ * Time.deltaTime * speed);
 
             animator.SetFloat("VelX", movX);
             animator.SetFloat("VelY", movZ);
